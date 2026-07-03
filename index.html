@@ -134,6 +134,9 @@
         <div class="choice" data-conf="medium">Medium</div>
         <div class="choice" data-conf="high">High</div>
       </div>
+      <p style="margin-bottom:2px"><strong>Why?</strong> <span class="muted">(optional, a few words)</span></p>
+      <p style="margin-top:4px"><input type="text" id="why" autocomplete="off" maxlength="200"
+          style="width:100%" placeholder=""></p>
       <button class="primary" id="btn-next" disabled>Next pair &#8594;</button>
     </div>
   </div>
@@ -205,9 +208,10 @@ function loadProgress() {
 
 // ---------- submission ----------
 function toCSV() {
-  const head = "rater_id,pair_id,choice,confidence,seconds,timestamp";
+  const head = "rater_id,pair_id,choice,confidence,why,seconds,timestamp";
+  const csvCell = (s) => '"' + String(s == null ? "" : s).replace(/"/g, '""') + '"';
   const rows = answers.map((a) =>
-    [raterId, a.pair_id, a.choice, a.confidence, a.seconds, a.ts].join(","));
+    [raterId, a.pair_id, a.choice, a.confidence, csvCell(a.why), a.seconds, a.ts].join(","));
   return head + "\n" + rows.join("\n") + "\n";
 }
 
@@ -256,6 +260,7 @@ function renderPair() {
 
   curChoice = null; curConf = null;
   document.querySelectorAll(".choice").forEach((el) => el.classList.remove("selected"));
+  $("#why").value = "";
   $("#btn-next").disabled = true;
   pairShownAt = Date.now();
   window.scrollTo(0, 0);
@@ -334,6 +339,7 @@ $("#btn-next").addEventListener("click", () => {
     pair_id: order[idx].pair_id,
     choice: curChoice,
     confidence: curConf,
+    why: $("#why").value.trim(),
     seconds: Math.round((Date.now() - pairShownAt) / 100) / 10,
     ts: new Date().toISOString(),
   });
