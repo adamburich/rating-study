@@ -254,17 +254,37 @@ async function submitResults() {
 }
 
 // ---------- rating flow ----------
+// A <video> that fails to load (e.g. a transient CDN miss right after deploy, or
+// a network blip) shows a permanent "no supported format" error and never retries
+// on its own — which would leave a rater stuck on, or silently guessing, a pair.
+// loadClip retries a failed load a few times with backoff and a cache-bust so the
+// browser re-fetches instead of serving the cached failure.  A per-render token
+// abandons stale retries once the rater has advanced to the next pair.
+let loadToken = 0;
+function loadClip(v, src, token) {
+  let attempts = 0;
+  const maxAttempts = 6;
+  const attempt = () => {
+    if (token !== loadToken) return;                 // superseded by a newer pair
+    attempts += 1;
+    v.src = attempts === 1 ? src : src + "?r=" + attempts;  // cache-bust on retry
+    v.load();
+  };
+  v.oncanplay = () => { if (token === loadToken) v.play().catch(() => {}); };
+  v.onerror = () => {
+    if (token === loadToken && attempts < maxAttempts) setTimeout(attempt, 400 * attempts);
+  };
+  attempt();
+}
+
 function renderPair() {
   const pair = order[idx];
   $("#pair-title").textContent = `Pair ${idx + 1} of ${order.length}`;
   $("#progress-bar").style.width = (100 * idx / order.length) + "%";
 
-  const vA = $("#vid-A"), vB = $("#vid-B");
-  vA.src = pair.clip_A; vB.src = pair.clip_B;
-  [vA, vB].forEach((v) => {
-    v.load();
-    v.addEventListener("canplay", () => v.play().catch(() => {}), { once: true });
-  });
+  const token = ++loadToken;
+  loadClip($("#vid-A"), pair.clip_A, token);
+  loadClip($("#vid-B"), pair.clip_B, token);
 
   curChoice = null; curConf = null;
   document.querySelectorAll(".choice").forEach((el) => el.classList.remove("selected"));
