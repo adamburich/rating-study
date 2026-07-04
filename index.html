@@ -82,6 +82,10 @@
     <p><strong>What you're doing:</strong> You'll watch short overhead traffic clips. In each clip,
     one vehicle is outlined in cyan with a <strong>&#9660;</strong> marker above it — that's the
     vehicle you're judging. The number on each vehicle is its speed in mph.</p>
+    <p><strong>About speed:</strong> These clips are from a German autobahn, where many stretches
+    have <strong>no speed limit</strong> — a high number isn't by itself breaking any rule. Judge
+    how the driver behaves in relation to the traffic around them (following distance, lane
+    changes, closing on other cars), not the number alone.</p>
     <p><strong>Your task:</strong> For each pair, you'll see two clips (A and B), each with one
     highlighted vehicle. Answer one question:</p>
     <div class="qbox">"Which highlighted driver is behaving more dangerously — creating more risk
@@ -152,8 +156,8 @@
 
 </div>
 
-<script src="config.js?v=3"></script>
-<script src="pairs.js?v=3"></script>
+<script src="config.js?v=4"></script>
+<script src="pairs.js?v=4"></script>
 <script>
 "use strict";
 
@@ -197,7 +201,9 @@ let idx = 0;          // current position in order
 let answers = [];     // {pair_id, choice, confidence, seconds, ts}
 let curChoice = null, curConf = null, pairShownAt = 0;
 
-const storeKey = () => "rating_progress_" + raterId;
+// Deck v2 (pairs 101-120, re-drawn 2026-07-04): versioned key so pilot raters
+// returning to the new deck don't resume v1 progress.
+const storeKey = () => "rating_progress_v2_" + raterId;
 
 function saveProgress() {
   localStorage.setItem(storeKey(), JSON.stringify({ idx, answers }));
@@ -280,7 +286,7 @@ function finish() {
 $("#rater-id").addEventListener("input", () => {
   const id = $("#rater-id").value.trim();
   const note = $("#resume-note");
-  if (id && localStorage.getItem("rating_progress_" + id)) {
+  if (id && localStorage.getItem("rating_progress_v2_" + id)) {
     note.textContent = "Saved progress found for this ID — you'll resume where you left off.";
   } else {
     note.textContent = "";
