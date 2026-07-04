@@ -93,8 +93,10 @@
     <p>Answer <strong>A</strong>, <strong>B</strong>, or one of two tie options:
     <strong>"Too close to call — both look risky"</strong> when both drivers concern you and
     you can't rank them, or <strong>"Neither looks dangerous"</strong> when nothing either
-    driver does concerns you. Use the tie options sparingly — pick A or B whenever you can
-    separate them at all. Also mark your confidence: low / medium / high.</p>
+    driver does concerns you. Pick A or B whenever you can genuinely separate them — but if
+    you honestly can't (for example, the difference hinges on speed you can't judge from
+    overhead), a tie option is a legitimate answer, not a failure. Also mark your
+    confidence: low / medium / high.</p>
     <p><strong>Rules:</strong></p>
     <ul>
       <li>Work alone. Don't discuss with other raters.</li>
@@ -156,8 +158,8 @@
 
 </div>
 
-<script src="config.js?v=4"></script>
-<script src="pairs.js?v=4"></script>
+<script src="config.js?v=5"></script>
+<script src="pairs.js?v=5"></script>
 <script>
 "use strict";
 
@@ -201,9 +203,9 @@ let idx = 0;          // current position in order
 let answers = [];     // {pair_id, choice, confidence, seconds, ts}
 let curChoice = null, curConf = null, pairShownAt = 0;
 
-// Deck v2 (pairs 101-120, re-drawn 2026-07-04): versioned key so pilot raters
-// returning to the new deck don't resume v1 progress.
-const storeKey = () => "rating_progress_v2_" + raterId;
+// Deck v3 (pairs 201-320, holdout recordings, drawn 2026-07-04 on the frozen
+// post-pilot scorer): versioned key so returning pilot raters start fresh.
+const storeKey = () => "rating_progress_v3_" + raterId;
 
 function saveProgress() {
   localStorage.setItem(storeKey(), JSON.stringify({ idx, answers }));
@@ -286,7 +288,7 @@ function finish() {
 $("#rater-id").addEventListener("input", () => {
   const id = $("#rater-id").value.trim();
   const note = $("#resume-note");
-  if (id && localStorage.getItem("rating_progress_v2_" + id)) {
+  if (id && localStorage.getItem("rating_progress_v3_" + id)) {
     note.textContent = "Saved progress found for this ID — you'll resume where you left off.";
   } else {
     note.textContent = "";
