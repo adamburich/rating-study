@@ -158,8 +158,8 @@
 
 </div>
 
-<script src="config.js?v=6"></script>
-<script src="pairs.js?v=6"></script>
+<script src="config.js?v=7"></script>
+<script src="pairs.js?v=7"></script>
 <script>
 "use strict";
 
@@ -203,9 +203,9 @@ let idx = 0;          // current position in order
 let answers = [];     // {pair_id, choice, confidence, seconds, ts}
 let curChoice = null, curConf = null, pairShownAt = 0;
 
-// Deck v4 (pairs 401-460, 60-pair holdout study subsampled from the v3 draw,
+// Deck v5 (pairs 501-524: the 24 model-confident pairs of the 60-pair holdout deck,
 // 2026-07-04): versioned key so returning raters start fresh.
-const storeKey = () => "rating_progress_v4_" + raterId;
+const storeKey = () => "rating_progress_v5_" + raterId;
 
 function saveProgress() {
   localStorage.setItem(storeKey(), JSON.stringify({ idx, answers }));
@@ -308,7 +308,7 @@ function finish() {
 $("#rater-id").addEventListener("input", () => {
   const id = $("#rater-id").value.trim();
   const note = $("#resume-note");
-  if (id && localStorage.getItem("rating_progress_v4_" + id)) {
+  if (id && localStorage.getItem("rating_progress_v5_" + id)) {
     note.textContent = "Saved progress found for this ID — you'll resume where you left off.";
   } else {
     note.textContent = "";
