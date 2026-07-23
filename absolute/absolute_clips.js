@@ -10,180 +10,16 @@ const ABS_CLIPS = [
     "src": "../realworld/clips/rectop_rec8_trk34.mp4"
   },
   {
-    "clip_id": "rectop_rec8_trk10",
-    "src": "../realworld/clips/rectop_rec8_trk10.mp4"
-  },
-  {
-    "clip_id": "rectop_rec8_trk23",
-    "src": "../realworld/clips/rectop_rec8_trk23.mp4"
-  },
-  {
-    "clip_id": "recbot_rec14_trk30",
-    "src": "../realworld/clips/recbot_rec14_trk30.mp4"
-  },
-  {
-    "clip_id": "recbot_rec14_trk11",
-    "src": "../realworld/clips/recbot_rec14_trk11.mp4"
-  },
-  {
-    "clip_id": "rectop_rec0_trk58",
-    "src": "../realworld/clips/rectop_rec0_trk58.mp4"
-  },
-  {
-    "clip_id": "rectop_rec0_trk20",
-    "src": "../realworld/clips/rectop_rec0_trk20.mp4"
-  },
-  {
-    "clip_id": "rectop_rec12_trk16",
-    "src": "../realworld/clips/rectop_rec12_trk16.mp4"
-  },
-  {
-    "clip_id": "rectop_rec12_trk71",
-    "src": "../realworld/clips/rectop_rec12_trk71.mp4"
-  },
-  {
-    "clip_id": "recbot_rec1_trk34",
-    "src": "../realworld/clips/recbot_rec1_trk34.mp4"
-  },
-  {
-    "clip_id": "recbot_rec1_trk42",
-    "src": "../realworld/clips/recbot_rec1_trk42.mp4"
-  },
-  {
-    "clip_id": "rectop_rec14_trk33",
-    "src": "../realworld/clips/rectop_rec14_trk33.mp4"
-  },
-  {
-    "clip_id": "rectop_rec14_trk69",
-    "src": "../realworld/clips/rectop_rec14_trk69.mp4"
-  },
-  {
-    "clip_id": "rectop_rec2_trk21",
-    "src": "../realworld/clips/rectop_rec2_trk21.mp4"
-  },
-  {
-    "clip_id": "rectop_rec2_trk4",
-    "src": "../realworld/clips/rectop_rec2_trk4.mp4"
-  },
-  {
-    "clip_id": "recbot_rec3_trk14",
-    "src": "../realworld/clips/recbot_rec3_trk14.mp4"
-  },
-  {
-    "clip_id": "recbot_rec3_trk36",
-    "src": "../realworld/clips/recbot_rec3_trk36.mp4"
-  },
-  {
-    "clip_id": "rectop_rec4_trk10",
-    "src": "../realworld/clips/rectop_rec4_trk10.mp4"
-  },
-  {
-    "clip_id": "rectop_rec4_trk51",
-    "src": "../realworld/clips/rectop_rec4_trk51.mp4"
-  },
-  {
-    "clip_id": "recbot_rec13_trk9",
-    "src": "../realworld/clips/recbot_rec13_trk9.mp4"
-  },
-  {
-    "clip_id": "recbot_rec13_trk21",
-    "src": "../realworld/clips/recbot_rec13_trk21.mp4"
-  },
-  {
-    "clip_id": "recbot_rec2_trk62",
-    "src": "../realworld/clips/recbot_rec2_trk62.mp4"
-  },
-  {
-    "clip_id": "recbot_rec2_trk65",
-    "src": "../realworld/clips/recbot_rec2_trk65.mp4"
-  },
-  {
-    "clip_id": "rectop_rec1_trk35",
-    "src": "../realworld/clips/rectop_rec1_trk35.mp4"
-  },
-  {
-    "clip_id": "rectop_rec1_trk27",
-    "src": "../realworld/clips/rectop_rec1_trk27.mp4"
-  },
-  {
-    "clip_id": "recbot_rec4_trk46",
-    "src": "../realworld/clips/recbot_rec4_trk46.mp4"
-  },
-  {
-    "clip_id": "recbot_rec4_trk42",
-    "src": "../realworld/clips/recbot_rec4_trk42.mp4"
-  },
-  {
-    "clip_id": "rectop_rec3_trk17",
-    "src": "../realworld/clips/rectop_rec3_trk17.mp4"
-  },
-  {
     "clip_id": "rectop_rec3_trk34",
     "src": "../realworld/clips/rectop_rec3_trk34.mp4"
-  },
-  {
-    "clip_id": "rectop_rec6_trk57",
-    "src": "../realworld/clips/rectop_rec6_trk57.mp4"
-  },
-  {
-    "clip_id": "rectop_rec6_trk44",
-    "src": "../realworld/clips/rectop_rec6_trk44.mp4"
-  },
-  {
-    "clip_id": "recbot_rec8_trk12",
-    "src": "../realworld/clips/recbot_rec8_trk12.mp4"
   },
   {
     "clip_id": "recbot_rec8_trk21",
     "src": "../realworld/clips/recbot_rec8_trk21.mp4"
   },
   {
-    "clip_id": "rectop_rec2_trk22",
-    "src": "../realworld/clips/rectop_rec2_trk22.mp4"
-  },
-  {
-    "clip_id": "rectop_rec2_trk39",
-    "src": "../realworld/clips/rectop_rec2_trk39.mp4"
-  },
-  {
     "clip_id": "recbot_rec10_trk10",
     "src": "../realworld/clips/recbot_rec10_trk10.mp4"
-  },
-  {
-    "clip_id": "recbot_rec10_trk7",
-    "src": "../realworld/clips/recbot_rec10_trk7.mp4"
-  },
-  {
-    "clip_id": "recbot_rec6_trk34",
-    "src": "../realworld/clips/recbot_rec6_trk34.mp4"
-  },
-  {
-    "clip_id": "recbot_rec6_trk11",
-    "src": "../realworld/clips/recbot_rec6_trk11.mp4"
-  },
-  {
-    "clip_id": "recbot_rec12_trk10",
-    "src": "../realworld/clips/recbot_rec12_trk10.mp4"
-  },
-  {
-    "clip_id": "recbot_rec12_trk82",
-    "src": "../realworld/clips/recbot_rec12_trk82.mp4"
-  },
-  {
-    "clip_id": "recbot_rec7_trk74",
-    "src": "../realworld/clips/recbot_rec7_trk74.mp4"
-  },
-  {
-    "clip_id": "recbot_rec7_trk81",
-    "src": "../realworld/clips/recbot_rec7_trk81.mp4"
-  },
-  {
-    "clip_id": "rectop_rec11_trk67",
-    "src": "../realworld/clips/rectop_rec11_trk67.mp4"
-  },
-  {
-    "clip_id": "rectop_rec11_trk57",
-    "src": "../realworld/clips/rectop_rec11_trk57.mp4"
   },
   {
     "clip_id": "recbot_rec5_trk22",
@@ -192,6 +28,58 @@ const ABS_CLIPS = [
   {
     "clip_id": "recbot_rec5_trk37",
     "src": "../realworld/clips/recbot_rec5_trk37.mp4"
+  },
+  {
+    "clip_id": "rectop_rec6_trk44",
+    "src": "../realworld/clips/rectop_rec6_trk44.mp4"
+  },
+  {
+    "clip_id": "recbot_rec3_trk14",
+    "src": "../realworld/clips/recbot_rec3_trk14.mp4"
+  },
+  {
+    "clip_id": "recbot_rec7_trk74",
+    "src": "../realworld/clips/recbot_rec7_trk74.mp4"
+  },
+  {
+    "clip_id": "rectop_rec2_trk4",
+    "src": "../realworld/clips/rectop_rec2_trk4.mp4"
+  },
+  {
+    "clip_id": "rectop_rec2_trk22",
+    "src": "../realworld/clips/rectop_rec2_trk22.mp4"
+  },
+  {
+    "clip_id": "recbot_rec2_trk65",
+    "src": "../realworld/clips/recbot_rec2_trk65.mp4"
+  },
+  {
+    "clip_id": "rectop_rec3_trk17",
+    "src": "../realworld/clips/rectop_rec3_trk17.mp4"
+  },
+  {
+    "clip_id": "rectop_rec6_trk57",
+    "src": "../realworld/clips/rectop_rec6_trk57.mp4"
+  },
+  {
+    "clip_id": "recbot_rec4_trk42",
+    "src": "../realworld/clips/recbot_rec4_trk42.mp4"
+  },
+  {
+    "clip_id": "rectop_rec4_trk10",
+    "src": "../realworld/clips/rectop_rec4_trk10.mp4"
+  },
+  {
+    "clip_id": "recbot_rec1_trk34",
+    "src": "../realworld/clips/recbot_rec1_trk34.mp4"
+  },
+  {
+    "clip_id": "recbot_rec6_trk11",
+    "src": "../realworld/clips/recbot_rec6_trk11.mp4"
+  },
+  {
+    "clip_id": "recbot_rec12_trk10",
+    "src": "../realworld/clips/recbot_rec12_trk10.mp4"
   }
 ];
 const ANCHOR_IDS = ["rectop_rec8_trk29", "recbot_rec8_trk21", "rectop_rec3_trk34", "rectop_rec8_trk34"];

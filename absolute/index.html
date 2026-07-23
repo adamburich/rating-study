@@ -121,7 +121,7 @@
   <!-- ============ Screen 3: rating ============ -->
   <div id="screen-rate" class="hidden">
     <div class="topline">
-      <h2 id="clip-title">Clip 1 of 39</h2>
+      <h2 id="clip-title">Clip 1 of 20</h2>
       <span class="muted" id="rater-label"></span>
     </div>
     <div class="progress"><div id="progress-bar" style="width:0%"></div></div>
@@ -173,7 +173,7 @@
 </div>
 
 <script src="absolute_config.js?v=1"></script>
-<script src="absolute_clips.js?v=1"></script>
+<script src="absolute_clips.js?v=2"></script>
 <script>
 "use strict";
 
@@ -216,7 +216,7 @@ let answers = [];   // {clip_id, rating, flag, confidence, why, seconds, ts}
 let curRating = null, curFlag = null, curConf = null, clipShownAt = 0;
 
 // v1 absolute deck: versioned key so a redraw restarts raters cleanly.
-const storeKey = () => "abs_rating_progress_v1_" + raterId;
+const storeKey = () => "abs_rating_progress_v2_" + raterId;
 function saveProgress() { localStorage.setItem(storeKey(), JSON.stringify({ idx, answers })); }
 function loadProgress() {
   try { return JSON.parse(localStorage.getItem(storeKey())); } catch { return null; }
@@ -245,7 +245,7 @@ async function submitResults() {
       method: "POST",
       mode: "no-cors",
       headers: { "Content-Type": "text/plain" },
-      body: JSON.stringify({ rater_id: raterId, study: "absolute_v1", answers: answers,
+      body: JSON.stringify({ rater_id: raterId, study: "absolute_v2", answers: answers,
                              submitted_at: new Date().toISOString() }),
     });
     status.textContent = "Answers submitted. The CSV download below is just a backup.";
@@ -308,7 +308,7 @@ function finish() {
 $("#rater-id").addEventListener("input", () => {
   const id = $("#rater-id").value.trim();
   $("#resume-note").textContent =
-    (id && localStorage.getItem("abs_rating_progress_v1_" + id))
+    (id && localStorage.getItem("abs_rating_progress_v2_" + id))
       ? "Saved progress found for this ID — you'll resume where you left off." : "";
 });
 
