@@ -8,4 +8,4 @@
 //   sheet.appendRow([now, data.rater_id, a.clip_id, a.rating, a.flag,
 //                    a.confidence, a.why || "", a.seconds, a.ts]);
 // Leave empty to disable remote submission (CSV download still works).
-const ABS_SUBMIT_URL = "";
+const ABS_SUBMIT_URL = "https://script.google.com/macros/s/AKfycbwG5ANkOqWCsPBZDUrDmF0iIXlQKtFaIJa28euUXg-EJpnPgy3wsQ1HOyvE_PztQgle9A/exec";
